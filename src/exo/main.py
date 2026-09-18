@@ -350,7 +350,8 @@ def main_inner(args: "Args"):
         logger.info("Running in OFFLINE mode — no internet checks, local models only")
 
     if args.bootstrap_peers:
-        raise ValueError("Bootstrap peers has been temporarily removed")
+        os.environ["EXO_BOOTSTRAP_PEERS"] = ",".join(args.bootstrap_peers)
+        logger.info(f"Bootstrap peers (zenoh connect/endpoints): {args.bootstrap_peers}")
 
     if args.no_batch:
         os.environ["EXO_NO_BATCH"] = "1"
@@ -462,7 +463,7 @@ class Args(FrozenModel):
             if os.getenv("EXO_BOOTSTRAP_PEERS")
             else [],
             dest="bootstrap_peers",
-            help="Comma-separated libp2p multiaddrs to dial on startup (env: EXO_BOOTSTRAP_PEERS)",
+            help="Comma-separated zenoh endpoints to dial on startup, e.g. tcp/10.0.0.2:52414 (env: EXO_BOOTSTRAP_PEERS)",
         )
         parser.add_argument(
             "--namespace",

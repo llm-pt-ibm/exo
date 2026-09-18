@@ -30,6 +30,18 @@ pub fn cfg(identity: &str, listen_port: u16) -> Result<zenoh::Config> {
     cfg.insert_json5("mode", "\"router\"")?;
     cfg.insert_json5("listen/endpoints", &format!("[\"tcp/[::]:{listen_port}\"]"))?;
     cfg.insert_json5("scouting/multicast/enabled", "false")?;
+    // static peers (cross-subnet): EXO_BOOTSTRAP_PEERS="tcp/10.0.0.2:52414,tcp/host:port"
+    if let Ok(peers) = std::env::var("EXO_BOOTSTRAP_PEERS") {
+        let eps: Vec<String> = peers
+            .split(',')
+            .map(str::trim)
+            .filter(|s| !s.is_empty())
+            .map(|s| format!("\"{s}\""))
+            .collect();
+        if !eps.is_empty() {
+            cfg.insert_json5("connect/endpoints", &format!("[{}]", eps.join(",")))?;
+        }
+    }
     cfg.insert_json5("scouting/multicast/autoconnect", "[]")?;
     cfg.insert_json5("scouting/gossip/multihop", "true")?;
     cfg.insert_json5("adminspace/enabled", "true")?;
