@@ -59,7 +59,11 @@ mlx = [
   "torchvision==0.25.0; sys_platform == 'darwin'",
   "torchvision==0.25.0; sys_platform == 'linux'",
 ]
-mlx-cpu = ["exo[mlx]", "mlx-cpu==0.31.2; sys_platform == 'linux'"]
+mlx-cpu = [
+  "exo[mlx]",
+  "mlx-cpu==0.31.2; sys_platform == 'linux' and platform_machine != 'ppc64le'",
+  "mlx-cpu==0.32.0; sys_platform == 'linux' and platform_machine == 'ppc64le'",
+]
 mlx-cuda12 = [
   "exo[mlx]",
   "mlx-cuda-12==0.32.0; sys_platform == 'linux'",
@@ -83,7 +87,11 @@ exo-rs = { workspace = true }
 mlx = [
   { git = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv.git", branch = "address-rdma-gpu-locks", marker = "sys_platform == 'darwin'" },
   { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx-0.32.0-cp313-cp313-manylinux_2_35_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
-  { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx-0.32.0-cp313-cp313-manylinux_2_35_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine != 'aarch64'" },
+  { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx-0.32.0-cp313-cp313-manylinux_2_35_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+{ path = "/home/multiarq/wheels/mlx-ppc64le/mlx-0.32.0-cp313-cp313-linux_ppc64le.whl", marker = "sys_platform == 'linux' and platform_machine == 'ppc64le'" },
+]
+mlx-cpu = [
+{ path = "/home/multiarq/wheels/mlx-ppc64le/mlx_cpu-0.32.0-py3-none-linux_ppc64le.whl", marker = "sys_platform == 'linux' and platform_machine == 'ppc64le'" },
 ]
 mlx-cuda-12 = [
   { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
