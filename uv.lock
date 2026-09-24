@@ -485,8 +485,10 @@ mlx-cuda12 = [
     { name = "mlx", version = "0.32.0", source = { url = "https://github.com/llm-pt-ibm/mlx/releases/download/mlx-0.32.0-ppc64le/mlx-0.32.0-cp313-cp313-linux_ppc64le.whl" }, marker = "(platform_machine == 'ppc64le' and sys_platform == 'linux' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine != 'ppc64le' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine != 'ppc64le' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine != 'ppc64le' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (extra != 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none')" },
     { name = "mlx", version = "0.32.0", source = { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx-0.32.0-cp313-cp313-manylinux_2_35_aarch64.whl" }, marker = "(platform_machine == 'aarch64' and sys_platform == 'linux' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine != 'aarch64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine != 'aarch64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine != 'aarch64' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (extra != 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none')" },
     { name = "mlx", version = "0.32.0", source = { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx-0.32.0-cp313-cp313-manylinux_2_35_x86_64.whl" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (extra != 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none')" },
+    { name = "mlx-cuda-12", version = "0.32.0", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and extra != 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'aarch64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine == 'aarch64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine == 'aarch64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'aarch64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine == 'aarch64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'aarch64' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'ppc64le' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine == 'ppc64le' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine == 'ppc64le' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'ppc64le' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine == 'ppc64le' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'ppc64le' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'x86_64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine == 'x86_64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine == 'x86_64' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'x86_64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine == 'x86_64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine == 'x86_64' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none')" },
+    { name = "mlx-cuda-12", version = "0.32.0", source = { url = "https://github.com/llm-pt-ibm/mlx/releases/download/mlx-0.32.0-ppc64le/mlx_cuda_12-0.32.0-py3-none-linux_ppc64le.whl" }, marker = "(platform_machine == 'ppc64le' and sys_platform == 'linux' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine != 'ppc64le' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine != 'ppc64le' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine != 'ppc64le' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (extra != 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none')" },
     { name = "mlx-cuda-12", version = "0.32.0", source = { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_aarch64.whl" }, marker = "(platform_machine == 'aarch64' and sys_platform == 'linux' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine != 'aarch64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine != 'aarch64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine != 'aarch64' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (extra != 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none')" },
-    { name = "mlx-cuda-12", version = "0.32.0", source = { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_x86_64.whl" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine == 'aarch64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine == 'aarch64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (extra != 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none')" },
+    { name = "mlx-cuda-12", version = "0.32.0", source = { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_x86_64.whl" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-3-exo-mlx-cuda12') or (platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (platform_machine != 'x86_64' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-none') or (sys_platform != 'linux' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda12') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-cuda13') or (extra == 'extra-3-exo-mlx-cpu' and extra == 'extra-3-exo-mlx-none') or (extra != 'extra-3-exo-mlx-cuda12' and extra == 'extra-3-exo-mlx-cuda13' and extra == 'extra-3-exo-mlx-none')" },
     { name = "mlx-lm", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "mlx-vlm", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "nvidia-ml-py", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -550,7 +552,9 @@ requires-dist = [
     { name = "mlx-cpu", marker = "platform_machine == 'ppc64le' and sys_platform == 'linux' and extra == 'mlx-cpu'", url = "https://github.com/llm-pt-ibm/mlx/releases/download/mlx-0.32.0-ppc64le/mlx_cpu-0.32.0-py3-none-linux_ppc64le.whl" },
     { name = "mlx-cpu", marker = "platform_machine != 'ppc64le' and sys_platform == 'linux' and extra == 'mlx-cpu'", specifier = "==0.31.2" },
     { name = "mlx-cuda-12", marker = "platform_machine == 'aarch64' and sys_platform == 'linux' and extra == 'mlx-cuda12'", url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_aarch64.whl" },
-    { name = "mlx-cuda-12", marker = "platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'mlx-cuda12'", url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_x86_64.whl" },
+    { name = "mlx-cuda-12", marker = "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux' and extra == 'mlx-cuda12'", specifier = "==0.32.0" },
+    { name = "mlx-cuda-12", marker = "platform_machine == 'ppc64le' and sys_platform == 'linux' and extra == 'mlx-cuda12'", url = "https://github.com/llm-pt-ibm/mlx/releases/download/mlx-0.32.0-ppc64le/mlx_cuda_12-0.32.0-py3-none-linux_ppc64le.whl" },
+    { name = "mlx-cuda-12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'mlx-cuda12'", url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_x86_64.whl" },
     { name = "mlx-cuda-13", marker = "platform_machine == 'aarch64' and sys_platform == 'linux' and extra == 'mlx-cuda13'", url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_13-0.32.0-py3-none-manylinux_2_35_aarch64.whl" },
     { name = "mlx-cuda-13", marker = "platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'mlx-cuda13'", url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_13-0.32.0-py3-none-manylinux_2_35_x86_64.whl" },
     { name = "mlx-lm", marker = "extra == 'mlx'", git = "https://github.com/rltakashige/mlx-lm?branch=leo%2Fdeepseek-v4" },
@@ -1521,6 +1525,37 @@ wheels = [
 [[package]]
 name = "mlx-cuda-12"
 version = "0.32.0"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux'",
+]
+dependencies = [
+    { name = "nvidia-cublas-cu12", marker = "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cuda-nvrtc-cu12", marker = "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cudnn-cu12", marker = "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cufft-cu12", marker = "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-nccl-cu12", marker = "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/83/e3/344eead1594a5c9e04c19dcc90885d3c9f8135d1dafcb0e02e727a43dc8d/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_aarch64.whl", hash = "sha256:fb0d059da3f79c39fa0bc588f6f82a63fe2030f3ef49c099f9b76c8d0c7d6da4", size = 82230839, upload-time = "2026-07-07T17:55:17.813Z" },
+    { url = "https://files.pythonhosted.org/packages/95/cd/3e29b39f4f9abfc3b2eb4266c8e7e6584b6332b73bfc843788cce9765ac4/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_x86_64.whl", hash = "sha256:7bd2257ace500eab7e86d7528e1b49e02bdd3de90192726198ff484bdef2b224", size = 84608422, upload-time = "2026-07-07T17:55:22.053Z" },
+    { url = "https://files.pythonhosted.org/packages/1d/8c/0f2b1e55204628f6beefb26b0f025dfc402af66c25bc571ec8a0662e65ca/mlx_cuda_12-0.32.0-py3-none-win_amd64.whl", hash = "sha256:67dca75d13f1761f1a7da999ba226c4beddfa0c86d2c77f8bb589de3c789c330", size = 57327326, upload-time = "2026-07-07T17:55:25.96Z" },
+]
+
+[[package]]
+name = "mlx-cuda-12"
+version = "0.32.0"
+source = { url = "https://github.com/llm-pt-ibm/mlx/releases/download/mlx-0.32.0-ppc64le/mlx_cuda_12-0.32.0-py3-none-linux_ppc64le.whl" }
+resolution-markers = [
+    "platform_machine == 'ppc64le' and sys_platform == 'linux'",
+]
+wheels = [
+    { url = "https://github.com/llm-pt-ibm/mlx/releases/download/mlx-0.32.0-ppc64le/mlx_cuda_12-0.32.0-py3-none-linux_ppc64le.whl", hash = "sha256:63578adfb595eb8d030d90a6c474635f294492689b09e82b71af66ce3d0d9b64" },
+]
+
+[[package]]
+name = "mlx-cuda-12"
+version = "0.32.0"
 source = { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_aarch64.whl" }
 resolution-markers = [
     "platform_machine == 'aarch64' and sys_platform == 'linux'",
@@ -1548,15 +1583,13 @@ name = "mlx-cuda-12"
 version = "0.32.0"
 source = { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_x86_64.whl" }
 resolution-markers = [
-    "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux'",
     "platform_machine == 'x86_64' and sys_platform == 'linux'",
-    "platform_machine == 'ppc64le' and sys_platform == 'linux'",
 ]
 dependencies = [
-    { name = "nvidia-cublas-cu12", marker = "platform_machine != 'aarch64' and sys_platform == 'linux'" },
-    { name = "nvidia-cuda-nvrtc-cu12", marker = "platform_machine != 'aarch64' and sys_platform == 'linux'" },
-    { name = "nvidia-cudnn-cu12", marker = "platform_machine != 'aarch64' and sys_platform == 'linux'" },
-    { name = "nvidia-nccl-cu12", marker = "platform_machine != 'aarch64' and sys_platform == 'linux'" },
+    { name = "nvidia-cublas-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cuda-nvrtc-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cudnn-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-nccl-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://github.com/rltakashige/mlx-jaccl-fix-small-recv/releases/download/mlx_cuda/mlx_cuda_12-0.32.0-py3-none-manylinux_2_35_x86_64.whl", hash = "sha256:3fd3d1491543e4ff4e6d6fbda77d2fca41316d32e4dadc36a10af75d43a2a51f" },
@@ -1874,7 +1907,7 @@ name = "nvidia-cublas-cu12"
 version = "12.9.2.10"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cuda-nvrtc-cu12", marker = "sys_platform == 'linux'" },
+    { name = "nvidia-cuda-nvrtc-cu12", marker = "platform_machine != 'ppc64le' and sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f7/a2/c96163a0fff1839c0c9548bbdeae7b853b867009e33b9b9264adc238b1cf/nvidia_cublas_cu12-12.9.2.10-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:5572131a59c3eebeeb1c4c8144f772d49372c20124916e072a0e3fc30df421d5", size = 575012079, upload-time = "2026-04-08T18:51:47.303Z" },
@@ -1907,7 +1940,7 @@ name = "nvidia-cudnn-cu12"
 version = "9.21.0.82"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12", marker = "sys_platform == 'linux'" },
+    { name = "nvidia-cublas-cu12", marker = "platform_machine != 'ppc64le' and sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f4/e9/aea85c214a5dad046e56131428c22ff40d0359db3a930040698c0c6c8e68/nvidia_cudnn_cu12-9.21.0.82-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:8ba7c5067854d2b8d8dc21a65bbc5a642b31e4dddc8864cf3a093d25a92e874c", size = 759281118, upload-time = "2026-04-14T15:30:44.958Z" },
@@ -1926,6 +1959,19 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/f1/84/26025437c1e6b61a707442184fa0c03d083b661adf3a3eecfd6d21677740/nvidia_cudnn_cu13-9.19.0.56-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:6ed29ffaee1176c612daf442e4dd6cfeb6a0caa43ddcbeb59da94953030b1be4", size = 433781201, upload-time = "2026-02-03T20:40:53.805Z" },
     { url = "https://files.pythonhosted.org/packages/a3/22/0b4b932655d17a6da1b92fa92ab12844b053bb2ac2475e179ba6f043da1e/nvidia_cudnn_cu13-9.19.0.56-py3-none-manylinux_2_27_x86_64.whl", hash = "sha256:d20e1734305e9d68889a96e3f35094d733ff1f83932ebe462753973e53a572bf", size = 366066321, upload-time = "2026-02-03T20:44:52.837Z" },
     { url = "https://files.pythonhosted.org/packages/91/a2/f020386683ee9ab2c9a9f7f79290d9b0d07f7241de54dc746af2abd188d2/nvidia_cudnn_cu13-9.19.0.56-py3-none-win_amd64.whl", hash = "sha256:40d8c375005bcb01495f8edf375230b203a411a0c05fb6dc92a3781edcb23eac", size = 350547366, upload-time = "2026-02-03T20:50:49.563Z" },
+]
+
+[[package]]
+name = "nvidia-cufft-cu12"
+version = "11.4.1.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "nvidia-nvjitlink-cu12", marker = "platform_machine != 'aarch64' and platform_machine != 'ppc64le' and platform_machine != 'x86_64' and sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9b/2b/76445b0af890da61b501fde30650a1a4bd910607261b209cccb5235d3daa/nvidia_cufft_cu12-11.4.1.4-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:1a28c9b12260a1aa7a8fd12f5ebd82d027963d635ba82ff39a1acfa7c4c0fbcf", size = 200822453, upload-time = "2025-06-05T20:05:27.889Z" },
+    { url = "https://files.pythonhosted.org/packages/95/f4/61e6996dd20481ee834f57a8e9dca28b1869366a135e0d42e2aa8493bdd4/nvidia_cufft_cu12-11.4.1.4-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:c67884f2a7d276b4b80eb56a79322a95df592ae5e765cf1243693365ccab4e28", size = 200877592, upload-time = "2025-06-05T20:05:45.862Z" },
+    { url = "https://files.pythonhosted.org/packages/20/ee/29955203338515b940bd4f60ffdbc073428f25ef9bfbce44c9a066aedc5c/nvidia_cufft_cu12-11.4.1.4-py3-none-win_amd64.whl", hash = "sha256:8e5bfaac795e93f80611f807d42844e8e27e340e0cde270dcb6c65386d795b80", size = 200067309, upload-time = "2025-06-05T20:13:59.762Z" },
 ]
 
 [[package]]
@@ -1953,6 +1999,16 @@ source = { registry = "https://pypi.org/simple" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/39/55/1920646a2e43ffd4fc958536b276197ed740e9e0c54105b4bb3521591fc7/nvidia_nccl_cu13-2.28.9-py3-none-manylinux_2_18_aarch64.whl", hash = "sha256:01c873ba1626b54caa12272ed228dc5b2781545e0ae8ba3f432a8ef1c6d78643", size = 196561677, upload-time = "2025-11-18T05:49:03.45Z" },
     { url = "https://files.pythonhosted.org/packages/b0/b4/878fefaad5b2bcc6fcf8d474a25e3e3774bc5133e4b58adff4d0bca238bc/nvidia_nccl_cu13-2.28.9-py3-none-manylinux_2_18_x86_64.whl", hash = "sha256:e4553a30f34195f3fa1da02a6da3d6337d28f2003943aa0a3d247bbc25fefc42", size = 196493177, upload-time = "2025-11-18T05:49:17.677Z" },
+]
+
+[[package]]
+name = "nvidia-nvjitlink-cu12"
+version = "12.9.86"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/46/0c/c75bbfb967457a0b7670b8ad267bfc4fffdf341c074e0a80db06c24ccfd4/nvidia_nvjitlink_cu12-12.9.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl", hash = "sha256:e3f1171dbdc83c5932a45f0f4c99180a70de9bd2718c1ab77d14104f6d7147f9", size = 39748338, upload-time = "2025-06-05T20:10:25.613Z" },
+    { url = "https://files.pythonhosted.org/packages/97/bc/2dcba8e70cf3115b400fef54f213bcd6715a3195eba000f8330f11e40c45/nvidia_nvjitlink_cu12-12.9.86-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:994a05ef08ef4b0b299829cde613a424382aff7efb08a7172c1fa616cc3af2ca", size = 39514880, upload-time = "2025-06-05T20:10:04.89Z" },
+    { url = "https://files.pythonhosted.org/packages/dd/7e/2eecb277d8a98184d881fb98a738363fd4f14577a4d2d7f8264266e82623/nvidia_nvjitlink_cu12-12.9.86-py3-none-win_amd64.whl", hash = "sha256:cc6fcec260ca843c10e34c936921a1c426b351753587fdd638e8cff7b16bb9db", size = 35584936, upload-time = "2025-06-05T20:16:08.525Z" },
 ]
 
 [[package]]
