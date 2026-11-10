@@ -1,3 +1,4 @@
+import os
 import shutil
 from collections.abc import Sequence
 from pathlib import Path
@@ -25,6 +26,41 @@ class MemoryUsage(FrozenModel):
             ram_available=Memory.from_bytes(ram_available),
             swap_total=Memory.from_bytes(swap_total),
             swap_available=Memory.from_bytes(swap_available),
+        )
+
+    @classmethod
+    def from_nvml(cls) -> "Self | None":
+        """VRAM of the GPUs this process sees (CUDA_VISIBLE_DEVICES), when EXO_MEMORY_FROM_GPU=1.
+        For discrete-GPU nodes, where system RAM is not the memory the model runs in."""
+        if os.getenv("EXO_MEMORY_FROM_GPU", "").lower() not in ("1", "true"):
+            return None
+        try:
+            import pynvml as nvml
+        except ImportError:
+            return None
+        try:
+            nvml.nvmlInit()
+            try:
+                vis = os.getenv("CUDA_VISIBLE_DEVICES", "")
+                idxs = [int(x) for x in vis.split(",") if x.strip().isdigit()] or list(
+                    range(nvml.nvmlDeviceGetCount())
+                )
+                total = free = 0
+                for i in idxs:
+                    m = nvml.nvmlDeviceGetMemoryInfo(nvml.nvmlDeviceGetHandleByIndex(i))
+                    total += m.total
+                    free += m.free
+            finally:
+                nvml.nvmlShutdown()
+        except Exception:
+            return None
+        reserve = int(os.getenv("EXO_GPU_RESERVE_MB", "1024")) * 1024 * 1024
+        sm = psutil.swap_memory()
+        return cls.from_bytes(
+            ram_total=total,
+            ram_available=max(free - reserve, 0),
+            swap_total=sm.total,
+            swap_available=sm.free,
         )
 
     @classmethod
