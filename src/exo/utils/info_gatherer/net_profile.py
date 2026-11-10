@@ -1,3 +1,4 @@
+import os
 from collections import defaultdict
 from collections.abc import AsyncGenerator, Mapping
 
@@ -79,15 +80,22 @@ async def check_reachability(
     out[remote_node_id].add(target_ip)
 
 
+def probe_ports(api_port: int) -> list[int]:
+    """API ports to probe on each peer IP. Several exo nodes on one host (one per GPU)
+    need distinct API ports; set EXO_PROBE_PORTS=52415,52416,... on every node."""
+    ports = [int(x) for x in os.getenv("EXO_PROBE_PORTS", "").split(",") if x.strip().isdigit()]
+    return ports or [api_port]
+
+
 async def check_reachable(
     topology: Topology,
     self_node_id: NodeId,
     node_network: Mapping[NodeId, NodeNetworkInfo],
     api_port: int,
-) -> AsyncGenerator[tuple[str, NodeId], None]:
+) -> AsyncGenerator[tuple[str, NodeId, int], None]:
     """Yield (ip, node_id) pairs as reachability probes complete."""
 
-    send, recv = channel[tuple[str, NodeId]]()
+    send, recv = channel[tuple[str, NodeId, int]]()
 
     # these are intentionally httpx's defaults so we can tune them later
     timeout = httpx.Timeout(timeout=5.0)
@@ -101,13 +109,14 @@ async def check_reachable(
         target_ip: str,
         expected_node_id: NodeId,
         client: httpx.AsyncClient,
-        send: Sender[tuple[str, NodeId]],
+        send: Sender[tuple[str, NodeId, int]],
+        port: int,
     ) -> None:
         async with send:
             out: defaultdict[NodeId, set[str]] = defaultdict(set)
-            await check_reachability(target_ip, expected_node_id, out, client, api_port)
+            await check_reachability(target_ip, expected_node_id, out, client, port)
             if expected_node_id in out:
-                await send.send((target_ip, expected_node_id))
+                await send.send((target_ip, expected_node_id, port))
 
     async with (
         httpx.AsyncClient(timeout=timeout, limits=limits, verify=False) as client,
@@ -119,7 +128,8 @@ async def check_reachable(
             if node_id == self_node_id:
                 continue
             for iface in node_network[node_id].interfaces:
-                tg.start_soon(_probe, iface.ip_address, node_id, client, send.clone())
+                for port in probe_ports(api_port):
+                    tg.start_soon(_probe, iface.ip_address, node_id, client, send.clone(), port)
         send.close()
 
         with recv:

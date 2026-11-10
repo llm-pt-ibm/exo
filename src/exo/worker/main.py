@@ -62,6 +62,8 @@ from exo.worker.plan import plan
 from exo.worker.runner.supervisor import RunnerSupervisor
 
 
+from exo.utils.info_gatherer.net_profile import probe_ports
+
 class Worker:
     def __init__(
         self,
@@ -391,22 +393,23 @@ class Worker:
             edges = set(
                 conn.edge for conn in self.state.topology.out_edges(self.node_id)
             )
-            conns: defaultdict[NodeId, set[str]] = defaultdict(set)
-            async for ip, nid in check_reachable(
+            conns: defaultdict[NodeId, set[tuple[str, int]]] = defaultdict(set)
+            ports = probe_ports(self.api_port)
+            async for ip, nid, port in check_reachable(
                 self.state.topology,
                 self.node_id,
                 self.state.node_network,
                 api_port=self.api_port,
             ):
-                if ip in conns[nid]:
+                if (ip, port) in conns[nid]:
                     continue
-                conns[nid].add(ip)
+                conns[nid].add((ip, port))
                 edge = SocketConnection(
                     # nonsense multiaddr
-                    sink_multiaddr=Multiaddr(address=f"/ip4/{ip}/tcp/{self.api_port}")
+                    sink_multiaddr=Multiaddr(address=f"/ip4/{ip}/tcp/{port}")
                     if "." in ip
                     # nonsense multiaddr
-                    else Multiaddr(address=f"/ip6/{ip}/tcp/{self.api_port}"),
+                    else Multiaddr(address=f"/ip6/{ip}/tcp/{port}"),
                 )
                 if edge not in edges:
                     logger.debug(f"ping discovered {edge=}")
@@ -420,11 +423,12 @@ class Worker:
                 if not isinstance(conn.edge, SocketConnection):
                     continue
                 # ignore mDNS discovered connections
-                if conn.edge.sink_multiaddr.port != self.api_port:
+                if conn.edge.sink_multiaddr.port not in ports:
                     continue
                 if (
                     conn.sink not in conns
-                    or conn.edge.sink_multiaddr.ip_address not in conns[conn.sink]
+                    or (conn.edge.sink_multiaddr.ip_address, conn.edge.sink_multiaddr.port)
+                    not in conns[conn.sink]
                 ):
                     logger.debug(f"ping failed to discover {conn=}")
                     await self.event_sender.send(TopologyEdgeDeleted(conn=conn))
